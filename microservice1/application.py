@@ -12,7 +12,7 @@ from modelos import db
 
 def create_app(config_name):
     application = Flask(__name__)
-    application.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgresql:postgresql@postgresql.cjvfvqpbuza0.us-east-1.rds.amazonaws.com:5432/postgresql"
+    application.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgresql:postgresql@database-1.cpgztpiss4va.us-east-2.rds.amazonaws.com:5432/database-1"
     application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     application.config['JWT_SECRET_KEY'] = 'frase-secreta'
     application.config['PROPAGATE_EXCEPTIONS'] = True
