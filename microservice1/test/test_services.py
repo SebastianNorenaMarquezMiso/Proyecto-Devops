@@ -18,12 +18,12 @@ class DriverTestCase(unittest.TestCase):
     #     assert (1, 2, 3) == (1, 2, 3)
 
     def test_create_blacklist(self):
-        requetsLogin = requests.post('http://demodevopstest-env-1.eba-eiuabrce.us-east-1.elasticbeanstalk.com/api/auth/login', json={
-            "username": "admin",
-            "password": "admin"
+        requetsLogin = requests.post('http://entrega.us-east-2.elasticbeanstalk.com/api/auth/login', json={
+            "username": "admin1",
+            "password": "admin1"
         })
         
-        requetsPost = requests.post('http://demodevopstest-env-1.eba-eiuabrce.us-east-1.elasticbeanstalk.com/api/black-list', 
+        requetsPost = requests.post('http://entrega.us-east-2.elasticbeanstalk.com/api/black-list', 
                                      headers={'Authorization': 'Bearer '+ requetsLogin.json()["token"]}, json={
             "email": email,
             "blocked_reason": blocked
@@ -31,13 +31,13 @@ class DriverTestCase(unittest.TestCase):
         # self.assertIsNotNone(requetsPost.json()["id"])
     
     def test_get_blacklist(self):
-        requetsLogin = requests.post('http://demodevopstest-env-1.eba-eiuabrce.us-east-1.elasticbeanstalk.com/api/auth/login', json={
-            "username": "admin",
-            "password": "admin"
+        requetsLogin = requests.post('http://entrega.us-east-2.elasticbeanstalk.com/api/auth/login', json={
+            "username": "admin1",
+            "password": "admin1"
         })
         
         
-        requetsGet = requests.get('http://demodevopstest-env-1.eba-eiuabrce.us-east-1.elasticbeanstalk.com/api/black-list/'+email, 
+        requetsGet = requests.get('http://entrega.us-east-2.elasticbeanstalk.com/api/black-list/'+email, 
                                      headers={'Authorization': 'Bearer '+ requetsLogin.json()["token"]})
         
         
